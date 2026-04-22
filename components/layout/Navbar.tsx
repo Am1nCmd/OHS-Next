@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Menu, X, ChevronDown, ExternalLink } from "lucide-react";
 import { primaryNav, siteConfig } from "@/lib/site";
@@ -41,12 +42,23 @@ export function Navbar() {
       <div className="container-page flex items-center justify-between h-16 md:h-20">
         <Link
           href="/"
-          className="flex items-center gap-2 font-display text-lg md:text-xl tracking-tight"
+          className="flex items-center gap-2.5"
           aria-label={siteConfig.name}
         >
-          <Logo className="h-8 w-8 text-primary" />
-          <span className="hidden sm:inline">Oriental Hair Solutions</span>
-          <span className="sm:hidden">OHS</span>
+          <div className="relative h-9 w-9 shrink-0">
+            <Image
+              src="/images/logo-ohs-icon.png"
+              alt="Oriental Hair Solutions logo"
+              fill
+              sizes="36px"
+              className="object-contain"
+              priority
+            />
+          </div>
+          <span className="hidden sm:inline font-display text-lg md:text-xl tracking-tight text-ink">
+            Oriental Hair Solutions
+          </span>
+          <span className="sm:hidden font-display text-lg tracking-tight text-ink">OHS</span>
         </Link>
 
         <nav className="hidden lg:flex items-center gap-1">
@@ -239,28 +251,3 @@ function MobileNavItem({ item }: { item: (typeof primaryNav)[number] }) {
   );
 }
 
-function Logo({ className }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 32 32"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className={className}
-      aria-hidden
-    >
-      <circle cx="16" cy="16" r="15" stroke="currentColor" strokeWidth="1.5" />
-      <path
-        d="M16 5c-3 4-3 8 0 11s3 7 0 11"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-      />
-      <path
-        d="M10 10c2 2 2 6 0 8M22 14c-2 2-2 6 0 8"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-      />
-    </svg>
-  );
-}

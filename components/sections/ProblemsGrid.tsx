@@ -1,39 +1,15 @@
+import Image from "next/image";
 import { Reveal, Stagger, StaggerItem } from "@/components/motion/Reveal";
-import {
-  Droplets,
-  Minimize2,
-  ChevronUp,
-  Droplet,
-  Snowflake,
-  HeartPulse,
-  Leaf,
-  Baby,
-} from "lucide-react";
 
-const icons = {
-  droplets: Droplets,
-  "minimize-2": Minimize2,
-  "chevron-up": ChevronUp,
-  droplet: Droplet,
-  snowflake: Snowflake,
-  "heart-pulse": HeartPulse,
-  leaf: Leaf,
-  baby: Baby,
-} as const;
-
-const problems: {
-  title: string;
-  body: string;
-  icon: keyof typeof icons;
-}[] = [
-  { title: "Excessive shedding", body: "Losing more than a handful a day.", icon: "droplets" },
-  { title: "Visible thinning", body: "A parting that keeps widening.", icon: "minimize-2" },
-  { title: "Receding hairline", body: "Temples and forehead creeping back.", icon: "chevron-up" },
-  { title: "Oily scalp", body: "Greasy by afternoon, flat by evening.", icon: "droplet" },
-  { title: "Dandruff & flakes", body: "Itchiness that no shampoo solves.", icon: "snowflake" },
-  { title: "Sensitive scalp", body: "Redness, tightness, reactions.", icon: "heart-pulse" },
-  { title: "Stalled growth", body: "Hair that refuses to grow past a length.", icon: "leaf" },
-  { title: "Postpartum loss", body: "Shedding that lingered well past month six.", icon: "baby" },
+const problems = [
+  { title: "Excessive shedding",    body: "Losing more than a handful a day.",          image: "/images/conditions/hair-loss.webp" },
+  { title: "Visible thinning",      body: "A parting that keeps widening.",              image: "/images/conditions/hair-thinning.webp" },
+  { title: "Female pattern loss",   body: "Diffuse thinning at the crown.",              image: "/images/conditions/female-pattern-baldness.webp" },
+  { title: "Male pattern baldness", body: "Temples and crown receding over time.",       image: "/images/conditions/male-pattern-baldness.webp" },
+  { title: "Premature greying",     body: "Pigment loss appearing earlier than expected.", image: "/images/conditions/grey-hair.webp" },
+  { title: "Dandruff & flakes",     body: "Itchiness that no shampoo solves.",           image: "/images/conditions/dandruff.webp" },
+  { title: "Dry & tight scalp",     body: "Flaking, tightness, sensitivity.",            image: "/images/conditions/dry-scalp.webp" },
+  { title: "Oily scalp",           body: "Greasy by afternoon, flat by evening.",       image: "/images/conditions/oily-scalp.webp" },
 ];
 
 export function ProblemsGrid() {
@@ -57,22 +33,27 @@ export function ProblemsGrid() {
         </div>
 
         <Stagger className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
-          {problems.map((p) => {
-            const Icon = icons[p.icon];
-            return (
-              <StaggerItem key={p.title}>
-                <div className="group h-full bg-surface border border-border rounded-2xl p-5 md:p-6 transition-all duration-200 hover:-translate-y-1 hover:shadow-soft">
-                  <div className="size-10 rounded-full bg-primary-50 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-bg transition-colors">
-                    <Icon className="size-5" />
-                  </div>
-                  <div className="mt-4 font-semibold text-ink">{p.title}</div>
-                  <div className="mt-1 text-sm text-muted leading-snug">
+          {problems.map((p) => (
+            <StaggerItem key={p.title}>
+              <div className="group h-full bg-surface border border-border rounded-2xl overflow-hidden transition-all duration-200 hover:-translate-y-1 hover:shadow-soft">
+                <div className="relative aspect-square overflow-hidden bg-primary-50">
+                  <Image
+                    src={p.image}
+                    alt={p.title}
+                    fill
+                    sizes="(max-width: 768px) 50vw, 25vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                  />
+                </div>
+                <div className="p-4 md:p-5">
+                  <div className="font-semibold text-ink text-sm md:text-base">{p.title}</div>
+                  <div className="mt-1 text-xs md:text-sm text-muted leading-snug">
                     {p.body}
                   </div>
                 </div>
-              </StaggerItem>
-            );
-          })}
+              </div>
+            </StaggerItem>
+          ))}
         </Stagger>
       </div>
     </section>
