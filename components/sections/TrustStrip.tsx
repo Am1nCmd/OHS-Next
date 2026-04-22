@@ -11,7 +11,7 @@ const stats = [
 const awards = [
   { src: "/images/press/superbrands-2017.png",  alt: "Superbrands Singapore 2017" },
   { src: "/images/press/superbrands-2018.png",  alt: "Superbrands Singapore 2018" },
-  { src: "/images/press/superbrands-2019.webp", alt: "Superbrands Singapore 2019" },
+  { src: "/images/press/superbrands-2019.png",  alt: "Superbrands Singapore 2019" },
   { src: "/images/press/swas-2023.png",         alt: "Singapore Women's Action Spa Awards 2023/24" },
   { src: "/images/press/icon-2024.png",         alt: "Icon Award 2024" },
   { src: "/images/press/daily-vanity.webp",     alt: "Daily Vanity Spa & Salon Awards" },

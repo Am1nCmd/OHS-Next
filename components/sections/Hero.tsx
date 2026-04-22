@@ -57,14 +57,14 @@ export function Hero() {
         <div className="lg:col-span-6 xl:col-span-7">
           <Reveal delay={0.1}>
             <div className="relative">
-              <div className="relative aspect-[4/3] md:aspect-[5/4] rounded-[2rem] overflow-hidden shadow-lift bg-primary-50">
+              <div className="relative aspect-[3/4] md:aspect-[4/5] lg:aspect-[3/4] rounded-[2rem] overflow-hidden shadow-lift bg-primary-50">
                 <Image
-                  src="/images/hero/home-hero-desktop.webp"
+                  src="/images/hero/home-hero-portrait.png"
                   alt="Client receiving herbal scalp treatment"
                   fill
                   priority
-                  sizes="(max-width: 1024px) 100vw, 58vw"
-                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover object-top"
                 />
                 <div className="absolute inset-0 ring-1 ring-inset ring-ink/5 rounded-[2rem]" />
               </div>

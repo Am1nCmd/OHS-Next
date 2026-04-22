@@ -1,18 +1,56 @@
 "use client";
 
 import { useState } from "react";
-import { Star, ChevronLeft, ChevronRight, Quote } from "lucide-react";
-import { Reveal } from "@/components/motion/Reveal";
+import { Star, ChevronLeft, ChevronRight, Quote, Check } from "lucide-react";
+import { Reveal, Stagger, StaggerItem } from "@/components/motion/Reveal";
 import { testimonials } from "@/lib/testimonials";
 import { AnimatePresence, motion } from "framer-motion";
+
+const videos = [
+  {
+    id: "BV9Hw6owEcw",
+    title: "Healthy Hair Growth",
+    customer: "Yin Jean",
+    points: [
+      "Deep Scalp Cleanse",
+      "Hair Growth Collagen Stimulated",
+      "Elastin and Hair Follicles Promoted",
+      "Rebalance Sebum Production",
+      "Baby Hair Started Growing",
+    ],
+  },
+  {
+    id: "8OFLTnvphRo",
+    title: "Nutritious Scalp Cleanse",
+    customer: "Mei Chi",
+    points: [
+      "Customized, targeted solutions",
+      "Use of 100% natural herbs",
+      "Visible reduction in hair loss",
+      "Healthier, cleaner scalp condition",
+      "Regrowth of baby hairs",
+    ],
+  },
+  {
+    id: "rtE8u0PwK2I",
+    title: "Reinforcing Fragile Strands",
+    customer: "Crystal",
+    points: [
+      "Clear diagnosis and professional guidance",
+      "Effective relief for sensitive and irritated scalp",
+      "Noticeable reduction in hair fall",
+      "Visible improvement in hair thickness and colour",
+      "Results recognised by others",
+    ],
+  },
+];
 
 export function Testimonials() {
   const [index, setIndex] = useState(0);
   const t = testimonials[index];
 
   const next = () => setIndex((i) => (i + 1) % testimonials.length);
-  const prev = () =>
-    setIndex((i) => (i - 1 + testimonials.length) % testimonials.length);
+  const prev = () => setIndex((i) => (i - 1 + testimonials.length) % testimonials.length);
 
   return (
     <section className="section">
@@ -29,22 +67,43 @@ export function Testimonials() {
           </Reveal>
         </div>
 
-        {/* YouTube embed */}
-        <Reveal delay={0.08}>
-          <div className="mt-10 rounded-[1.75rem] overflow-hidden aspect-video shadow-lift">
-            <iframe
-              src="https://www.youtube.com/embed/BV9Hw6owEcw?rel=0&modestbranding=1"
-              title="Oriental Hair Solutions — Customer Testimonials"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="w-full h-full border-0"
-              loading="lazy"
-            />
-          </div>
-        </Reveal>
+        {/* 3 YouTube video testimonials */}
+        <Stagger className="mt-10 grid gap-6 md:grid-cols-3">
+          {videos.map((v) => (
+            <StaggerItem key={v.id}>
+              <div className="flex flex-col gap-4 h-full">
+                {/* Video embed */}
+                <div className="rounded-2xl overflow-hidden aspect-video shadow-soft">
+                  <iframe
+                    src={`https://www.youtube.com/embed/${v.id}?rel=0&modestbranding=1`}
+                    title={`${v.title} — ${v.customer}`}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="w-full h-full border-0"
+                    loading="lazy"
+                  />
+                </div>
+                {/* Card */}
+                <div className="flex-1 rounded-2xl border border-border bg-surface p-5">
+                  <div className="font-display text-lg leading-snug">{v.title}</div>
+                  <div className="text-sm text-primary font-medium mt-0.5">{v.customer}</div>
+                  <ul className="mt-3 space-y-1.5">
+                    {v.points.map((p) => (
+                      <li key={p} className="flex items-start gap-2 text-xs text-muted">
+                        <Check className="size-3.5 text-primary shrink-0 mt-0.5" />
+                        {p}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </StaggerItem>
+          ))}
+        </Stagger>
 
+        {/* Written testimonials carousel */}
         <Reveal delay={0.1}>
-          <div className="mt-12 relative rounded-[2rem] bg-primary-50 border border-primary/10 p-8 md:p-14 overflow-hidden">
+          <div className="mt-10 relative rounded-[2rem] bg-primary-50 border border-primary/10 p-8 md:p-14 overflow-hidden">
             <Quote
               className="absolute top-6 right-6 md:top-10 md:right-10 size-14 md:size-20 text-primary/10"
               aria-hidden
