@@ -48,8 +48,8 @@ export default function AboutPage() {
             <Reveal>
               <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden bg-primary-50 shadow-lift">
                 <Image
-                  src="/images/hero/home-hero-desktop.webp"
-                  alt="Inside an Oriental Hair Solutions outlet"
+                  src="/images/sections/hairgrowth.webp"
+                  alt="Oriental Hair Solutions — herbal hair growth treatment"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover"
@@ -83,9 +83,9 @@ export default function AboutPage() {
       <section className="section bg-primary-50/60">
         <div className="container-page grid gap-10 md:grid-cols-3 text-center">
           {[
-            { n: "2005", l: "First outlet opened" },
+            { n: "2008", l: "First outlet opened" },
             { n: "12,400+", l: "Clients served" },
-            { n: "4", l: "Outlets across Singapore" },
+            { n: "10", l: "Outlets across Singapore" },
           ].map((s) => (
             <div key={s.n}>
               <div className="font-display text-5xl md:text-6xl text-primary">

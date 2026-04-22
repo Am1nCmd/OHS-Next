@@ -24,7 +24,7 @@ export function ProblemStatement() {
         </div>
 
         <Reveal delay={0.15}>
-          <div className="mt-12 relative w-full rounded-[1.75rem] overflow-hidden shadow-soft">
+          <div className="mt-12 relative w-full rounded-[1.75rem] overflow-hidden">
             <Image
               src="/images/sections/hair-loss-banner.webp"
               alt="The many signs of hair loss — Oriental Hair Solutions"

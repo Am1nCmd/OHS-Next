@@ -35,7 +35,7 @@ const steps = [
 
 export function TreatmentSteps() {
   return (
-    <section className="section bg-primary-50/40">
+    <section className="section">
       <div className="container-page">
         <div className="max-w-2xl">
           <Reveal>
@@ -53,7 +53,7 @@ export function TreatmentSteps() {
             <StaggerItem key={s.n}>
               <article className="group h-full bg-surface rounded-2xl border border-border overflow-hidden hover:-translate-y-1 hover:shadow-soft transition-all duration-200">
                 {/* GIF — use img to preserve animation */}
-                <div className="relative aspect-square bg-primary-50 overflow-hidden">
+                <div className="relative aspect-[3/4] bg-primary-50 overflow-hidden">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={s.gif}

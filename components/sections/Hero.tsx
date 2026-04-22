@@ -100,7 +100,7 @@ function FloatingStat() {
           12,400<span className="text-accent">+</span>
         </div>
         <div className="text-xs text-muted mt-1 leading-snug">
-          scalps treated since 2005
+          scalps treated since 2008
         </div>
       </div>
     </div>

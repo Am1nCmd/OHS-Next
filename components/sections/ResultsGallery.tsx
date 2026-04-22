@@ -30,7 +30,6 @@ function BeforeAfterSlider({
   before,
   after,
   concern,
-  timeline,
 }: (typeof cases)[number]) {
   const [pos, setPos] = useState(50);
   const dragging = useRef(false);
@@ -113,12 +112,8 @@ function BeforeAfterSlider({
       </div>
 
       {/* Caption */}
-      <div className="px-5 py-4 flex items-center justify-between">
+      <div className="px-5 py-4">
         <div className="font-semibold text-ink">{concern}</div>
-        <div className="text-xs text-muted">
-          Result at{" "}
-          <span className="text-primary font-medium">{timeline}</span>
-        </div>
       </div>
     </article>
   );

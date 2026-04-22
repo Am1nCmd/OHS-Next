@@ -23,11 +23,25 @@ export function Testimonials() {
           </Reveal>
           <Reveal delay={0.05}>
             <h2 className="mt-4 text-3xl md:text-4xl">
-              Don't just hear it from us.{" "}
-              <span className="text-muted">Hear it from them.</span>
+              Don&apos;t just hear it from us.{" "}
+              <span className="text-muted">Hear it from our customers.</span>
             </h2>
           </Reveal>
         </div>
+
+        {/* YouTube embed */}
+        <Reveal delay={0.08}>
+          <div className="mt-10 rounded-[1.75rem] overflow-hidden aspect-video shadow-lift">
+            <iframe
+              src="https://www.youtube.com/embed/BV9Hw6owEcw?rel=0&modestbranding=1"
+              title="Oriental Hair Solutions — Customer Testimonials"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="w-full h-full border-0"
+              loading="lazy"
+            />
+          </div>
+        </Reveal>
 
         <Reveal delay={0.1}>
           <div className="mt-12 relative rounded-[2rem] bg-primary-50 border border-primary/10 p-8 md:p-14 overflow-hidden">

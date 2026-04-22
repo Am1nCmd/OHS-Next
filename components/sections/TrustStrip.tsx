@@ -49,14 +49,14 @@ export function TrustStrip() {
             <p className="text-center text-xs uppercase tracking-widest text-bg/40 mb-8">
               Award &amp; media recognition
             </p>
-            <div className="flex flex-wrap justify-center items-center gap-6 md:gap-10">
+            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
               {awards.map((a) => (
-                <div key={a.alt} className="relative h-10 w-24 md:h-12 md:w-28 opacity-60 hover:opacity-90 transition-opacity">
+                <div key={a.alt} className="relative h-14 w-32 md:h-16 md:w-36 opacity-60 hover:opacity-100 transition-opacity">
                   <Image
                     src={a.src}
                     alt={a.alt}
                     fill
-                    sizes="112px"
+                    sizes="144px"
                     className="object-contain"
                   />
                 </div>
