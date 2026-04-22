@@ -48,7 +48,7 @@ export function Hero() {
               </div>
               <div className="flex items-center gap-2">
                 <Sparkles className="size-3.5 text-accent" />
-                4 Singapore outlets
+                10 Singapore outlets
               </div>
             </div>
           </Reveal>
@@ -56,18 +56,20 @@ export function Hero() {
 
         <div className="lg:col-span-6 xl:col-span-7">
           <Reveal delay={0.1}>
-            <div className="relative aspect-[4/3] md:aspect-[5/4] rounded-[2rem] overflow-hidden shadow-lift bg-primary-50">
-              <Image
-                src="/images/hero/home-hero-desktop.webp"
-                alt="Client receiving herbal scalp treatment"
-                fill
-                priority
-                sizes="(max-width: 1024px) 100vw, 58vw"
-                className="object-cover"
-              />
-              <div className="absolute inset-0 ring-1 ring-inset ring-ink/5 rounded-[2rem]" />
+            <div className="relative">
+              <div className="relative aspect-[4/3] md:aspect-[5/4] rounded-[2rem] overflow-hidden shadow-lift bg-primary-50">
+                <Image
+                  src="/images/hero/home-hero-desktop.webp"
+                  alt="Client receiving herbal scalp treatment"
+                  fill
+                  priority
+                  sizes="(max-width: 1024px) 100vw, 58vw"
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 ring-1 ring-inset ring-ink/5 rounded-[2rem]" />
+              </div>
+              <FloatingStat />
             </div>
-            <FloatingStat />
           </Reveal>
         </div>
       </div>

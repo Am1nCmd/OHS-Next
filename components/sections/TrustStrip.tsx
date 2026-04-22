@@ -3,7 +3,7 @@ import { Reveal } from "@/components/motion/Reveal";
 
 const stats = [
   { value: "12,400+", label: "scalps treated" },
-  { value: "4", label: "Singapore outlets" },
+  { value: "10", label: "Singapore outlets" },
   { value: "20 yrs", label: "trichology practice" },
   { value: "4.9★", label: "across 3,200 reviews" },
 ];

@@ -27,17 +27,14 @@ export function Footer() {
     <footer className="mt-auto bg-ink text-bg/90">
       <div className="container-page py-16 md:py-20 grid gap-12 md:grid-cols-12">
         <div className="md:col-span-4">
-          <div className="flex items-center gap-3">
-            <div className="relative h-10 w-10 shrink-0">
-              <Image
-                src="/images/logo-ohs-icon.png"
-                alt="Oriental Hair Solutions"
-                fill
-                sizes="40px"
-                className="object-contain"
-              />
-            </div>
-            <div className="font-display text-xl text-bg">Oriental Hair Solutions</div>
+          <div className="relative h-10 w-48">
+            <Image
+              src="/images/logo-ohs-white.png"
+              alt="Oriental Hair Solutions"
+              fill
+              sizes="192px"
+              className="object-contain object-left"
+            />
           </div>
           <p className="mt-3 text-sm text-bg/70 max-w-xs leading-relaxed">
             Trichologist-led herbal hair care. Rooted in traditional wisdom,
